@@ -25,7 +25,7 @@ export default function Page() {
     }
     const getTodos = async () => {
         const todos = await getTodoList();
-        if (todos.length > 0) setTodoList(todos);
+        if (todos?.length > 0) setTodoList(todos);
     };
     useEffect(() => {
         getTodos();

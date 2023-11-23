@@ -16,6 +16,7 @@ export async function connectDB() {
 }
 
 export async function registerUser(user) {
+    await connectDB();
     console.log("register start", user);
     const saltRounds = 10;
     const salt = bcrypt.genSaltSync(saltRounds);
@@ -39,6 +40,7 @@ export async function registerUser(user) {
 }
 
 export async function createTodo(todo) {
+    await connectDB();
     try {
         const newTodo = new Todo({
             text: todo.text,
@@ -56,6 +58,7 @@ export async function createTodo(todo) {
 }
 
 export async function getTodoList() {
+    await connectDB();
     try {
         return await Todo.find();
     } catch (e) {
@@ -64,6 +67,7 @@ export async function getTodoList() {
 }
 
 export async function changeStatus(id, status) {
+    await connectDB();
     try {
         return await Todo.findByIdAndUpdate(id, { status: status }, { returnDocument: "after" });
     } catch (e) {
@@ -72,6 +76,7 @@ export async function changeStatus(id, status) {
 }
 
 export async function deleteTodo(id) {
+    await connectDB();
     try {
         return await Todo.findByIdAndDelete(id);
     } catch (e) {
@@ -80,6 +85,7 @@ export async function deleteTodo(id) {
 }
 
 export async function editTodo(id, text) {
+    await connectDB();
     try {
         return await Todo.findByIdAndUpdate(id, { text: text }, { new: true });
     } catch (e) {
