@@ -32,7 +32,7 @@ export default function Page() {
     }, []);
     return (
         <div className="flex-grow w-full bg-blue-500 rounded-md p-4">
-            <h1 className="text-center font-bold">To Do's</h1>
+            <h1 className="text-center font-bold">To Do-s</h1>
             <div className="flex items-center my-4">
                 <input
                     type="text"
