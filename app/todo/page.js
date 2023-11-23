@@ -31,7 +31,7 @@ export default function Page() {
         getTodos();
     }, []);
     return (
-        <div className="flex-grow w-full bg-blue-500 rounded-md p-4">
+        <div className="flex-grow w-full bg-blue-500 rounded-md p-4 max-w-lg">
             <h1 className="text-center font-bold">To Do-s</h1>
             <div className="flex items-center my-4">
                 <input
